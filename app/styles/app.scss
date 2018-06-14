@@ -1,0 +1,86 @@
+
+@import "ember-bootstrap/bootstrap";
+
+body{
+    font-size: 14px;
+    
+}
+
+.panel-default .panel-heading{
+    background-color: #555;
+}
+
+.panel-body{
+    background-color: lightblue;
+}
+
+#order{
+    color: white;
+}
+
+.accord-title{
+    color: white;
+    font-size: 5px;
+}
+
+.last-row{
+    margin-left: 6.5%;
+}
+
+.last-row-sec{
+    margin-left: 12%;
+}
+
+.panel-title {
+    
+    font-size: 14px;
+
+}
+
+.panel-heading{
+    font-size: 16px;
+}
+
+footer {
+    /* make element as footer*/
+    float: left;
+    color: #959595;
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+      
+      /*link hover color */
+  footer a, a::before {
+      text-decoration:none;
+      color:#959595;
+      
+  }
+  
+  .footerLink{
+      margin-bottom:5px;
+  }
+
+  .footerImage {
+	margin: 24px auto 11px;
+}
+
+.headOptions{
+    padding:10px;
+  }
+
+  #footer{
+    position: fixed;
+    margin-bottom: 0px;
+    bottom: 0%;
+    left: 0px;
+    right: 0px;
+  }
+
+  .btn{
+    margin-left: 5%;
+  }
+
+  #gps-id{
+    margin-left: 0%;
+  }

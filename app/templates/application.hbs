@@ -1,5 +1,319 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+
+<div class="container">
+
+  <div class="panel panel-default">
+  <div class="panel-heading" id="order">Order-Search</div>
+  <div class="panel-body">
+     <div class="row">
+      <div class="col-sm-12" >
+    <label >OMX#</label>
+        {{
+        input
+        type="text"
+        class="omx-id"
+        placeholder="omxId"
+        value=omxSearch
+        }}
+       
+        
+        <label >GPS#</label>
+        {{
+        input
+        type="text"
+        id="gps-id"
+        placeholder="GPS HostName"
+        value=gpsSearch
+        }}
+        
+  <button type="button" class="btn" {{action "onSubmit" omxSearch gpsSearch}}>Search</button>
+  </div>
+       </div>
+  </div>
+</div>
+
+
+
+
+
+{{#bs-accordion as |acc|}}
+
+  {{#acc.item value="1" as |aitem|}}
+  <div  class="accord-title" {{action "toggleAccordian"}}>
+    {{#aitem.title}}
+      Site Information
+      {{#if openAcc}}
+      <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+      {{else}}
+      <span class="glyphicon glyphicon-chevron-up pull-right"></span>
+      {{/if}}
+    {{/aitem.title}}
+
+  </div>
+    
+  {{#aitem.body}}
+   <div class="row">
+      <div class="col-sm-4 text-right" >
+        LCON
+        {{
+        input
+        type="text"
+        class="lcon"
+        action=""
+        placeholder="lcon"
+        }}     
+        </div>
+
+        <div class="col-sm-4 text-right" >
+        OMX
+        {{
+        input
+        type="text"
+        class="omx"
+        action=""
+        }} 
+
+        
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col-sm-4 text-right" >
+        Address
+        {{
+        input
+        type="text"
+        class="address"
+        action=""
+        }}     
+        </div>
+
+        <div class="col-sm-4 text-right" >
+        Bridge
+        {{
+        input
+        type="text"
+        class="bridge"
+        action=""
+        }} 
+
+        
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-4 text-right" >
+        PIM
+        {{
+        input
+        type="text"
+        class="pim"
+        action=""
+        }}     
+        </div>
+
+        <div class="col-sm-4 text-right" >
+        GPS
+        {{
+        input
+        type="text"
+        class="gps"
+        action=""
+        }} 
+
+        
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4 text-right" >
+        SR#
+        {{
+        input
+        type="text"
+        class="sr"
+        action=""
+        }}     
+        </div>
+
+        <div class="col-sm-4 text-right" >
+        History
+        {{
+        input
+        type="text"
+        class="history"
+        action=""
+        }} 
+        </div>
+        </div>
+
+        <div class="row">
+      <div class="col-sm-6 last-row" >
+        Technician Contact
+        {{
+        input
+        type="text"
+        class="tech-contact"
+        action=""
+        }}     
+        </div>
+      </div>
+
+ {{/aitem.body}}
+  
+  {{/acc.item}}
+
+  {{/bs-accordion}}
+    
+  {{#bs-accordion as |acc|}}
+  {{#acc.item value="2" as |aitem|}}
+  <div class="accord-title" {{action "toggleAccordian1"}}>
+    {{#aitem.title}}
+     Technical Details
+     {{#if openAcc1}}
+      <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+      {{else}}
+      <span class="glyphicon glyphicon-chevron-up pull-right"></span>
+      {{/if}}
+    {{/aitem.title}}
+  </div>
+    
+  {{#aitem.body}}
+
+    <div class="row">
+      <div class="col-sm-4 text-right" >
+        IP Address
+        {{
+        input
+        type="text"
+        class="tech-details"
+        action=""
+        }}     
+        </div>
+
+        <div class="col-sm-4 text-right" >
+        VLAN
+        {{
+        input
+        type="text"
+        class="tech-details"
+        action=""
+        }} 
+
+        
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col-sm-4 text-right" >
+        PER Info
+        {{
+        input
+        type="text"
+        class="tech-details"
+        action=""
+        }}     
+        </div>
+
+        <div class="col-sm-4 text-right" >
+        Circuit Id
+        {{
+        input
+        type="text"
+        class="tech-details"
+        action=""
+        }} 
+
+        
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-4 text-right" >
+        HostName
+        {{
+        input
+        type="text"
+        class="tech-details"
+        action=""
+        }}     
+        </div>
+
+        <div class="col-sm-4 text-right" >
+        LTE
+        {{
+        input
+        type="text"
+        class="tech-details"
+        action=""
+        }} 
+
+        
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4 text-right" >
+        S.No/MAC address
+        {{
+        input
+        type="text"
+        class="tech-details"
+        action=""
+        }}     
+        </div>
+
+        <div class="col-sm-4 text-right" >
+        vNF info
+        {{
+        input
+        type="text"
+        class="tech-details"
+        action=""
+        }} 
+        </div>
+        </div>
+
+        <div class="row">
+      <div class="col-sm-6 last-row-sec" >
+        DEMARC
+        {{
+        input
+        type="text"
+        class="tech-details"
+        action=""
+        }}     
+        </div>
+      </div>
+    
+  {{/aitem.body}}
+  
+  {{/acc.item}}
+
+{{/bs-accordion}}
+
+</div>
+
+<footer id="footer">
+    {{!-- ATT logo --}}
+    <img src='{{rootURL}}assets/images/att_footer_logo.png' class='img-responsive footerImage' alt='AT&T Logo'>
+
+    {{!-- Footer link--}}
+    <div class='footerLink'>
+        
+    </div>
+
+    {{!-- version/release --}}
+    <div id="version-release">
+        
+        <span>Powered By BizOps </span>
+    </div>
+
+    {{!-- copyright --}}
+    <div id="copyright">
+        Copyright 2018 AT&amp;T Services, Inc. All Rights reserved.
+    </div>
+</footer>
 
 {{outlet}}
+
+
