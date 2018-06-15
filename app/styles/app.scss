@@ -6,6 +6,7 @@ body{
     
 }
 
+
 .panel-default .panel-heading{
     background-color: #555;
 }
@@ -20,13 +21,16 @@ body{
 
 .accord-title{
     color: white;
-    font-size: 5px;
+    font-size: 1px;
 }
 
-.last-row{
-    margin-left: 6.5%;
-}
-
+// .last-row{
+//     margin-left: 6.5%;
+// }
+// .address{
+//     height: 80%;
+//     width:90%;
+// }
 .last-row-sec{
     margin-left: 12%;
 }
@@ -41,46 +45,48 @@ body{
     font-size: 16px;
 }
 
-footer {
+  #footer2 {
     /* make element as footer*/
-    float: left;
+    color: #959595;
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+  #footer1 {
+    /* make element as footer*/
+    position: fixed;
+    bottom: 0;
     color: #959595;
     text-align: center;
     display: block;
     width: 100%;
   }
       
-      /*link hover color */
-  footer a, a::before {
-      text-decoration:none;
-      color:#959595;
       
-  }
+      
+//       /*link hover color */
+//   footer a, a::before {
+//       color:#959595;
+      
+//   }
   
-  .footerLink{
-      margin-bottom:5px;
-  }
+//   .footerLink{
+//       margin-bottom:5px;
+//   }
 
-  .footerImage {
-	margin: 24px auto 11px;
-}
+//   .footerImage {
+// 	margin: 24px auto 11px;
+// }
 
 .headOptions{
     padding:10px;
   }
 
-  #footer{
-    position: fixed;
-    margin-bottom: 0px;
-    bottom: 0%;
-    left: 0px;
-    right: 0px;
-  }
+ 
+//   .btn{
+//     margin-left: 5%;
+//   }
 
-  .btn{
-    margin-left: 5%;
-  }
-
-  #gps-id{
-    margin-left: 0%;
-  }
+//   #gps-id{
+//     margin-left: 0%;
+//   }

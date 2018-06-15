@@ -5,40 +5,38 @@
   <div class="panel-heading" id="order">Order-Search</div>
   <div class="panel-body">
      <div class="row">
-      <div class="col-sm-12" >
-    <label >OMX#</label>
+       <div class="col-sm-2 text-right" ><b>OMX#</b></div> 
+      <div class="col-sm-2" >
         {{
         input
         type="text"
         class="omx-id"
-        placeholder="omxId"
+        placeholder="OMX-ID"
         value=omxSearch
         }}
-       
-        
-        <label >GPS#</label>
+       </div>
+        <div class="col-sm-2 text-right" ><b>GPS#</b></div>
+       <div class="col-sm-2" >
         {{
         input
         type="text"
         id="gps-id"
-        placeholder="GPS HostName"
+        placeholder="GPS-ID"
         value=gpsSearch
         }}
-        
+        </div>
+        <div class="col-sm-2" >
   <button type="button" class="btn" {{action "onSubmit" omxSearch gpsSearch}}>Search</button>
+  {{!-- {{bs-button defaultText="Start download" pendingText="Downloading..." resolvedText="Download complete!" onClick=(action "onSubmit" omxSearch gpsSearch)}} --}}
   </div>
        </div>
   </div>
 </div>
 
-
-
-
-
-{{#bs-accordion as |acc|}}
+{{#bs-accordion  id="acc"as |acc|}}
 
   {{#acc.item value="1" as |aitem|}}
-  <div  class="accord-title" {{action "toggleAccordian"}}>
+  <div  class="accord-title" {{action "toggleAccordian"}} >
     {{#aitem.title}}
       Site Information
       {{#if openAcc}}
@@ -52,108 +50,112 @@
     
   {{#aitem.body}}
    <div class="row">
-      <div class="col-sm-4 text-right" >
-        LCON
+      <div class="col-sm-2 text-right" > LCON</div>
+      <div class="col-sm-2" >
         {{
         input
         type="text"
         class="lcon"
         action=""
         placeholder="lcon"
+        value=Lcon
         }}     
         </div>
-
-        <div class="col-sm-4 text-right" >
-        OMX
+ <div class="col-sm-2 text-right">OMX</div>
+        <div class="col-sm-2" >
         {{
         input
         type="text"
         class="omx"
-        action=""
-        }} 
-
+        placeholder="OMX"
+        value=omx
+        }}     
         
+
+     
       </div>
-    </div>
+    </div> 
 
      <div class="row">
-      <div class="col-sm-4 text-right" >
-        Address
-        {{
-        input
-        type="text"
-        class="address"
-        action=""
-        }}     
-        </div>
-
-        <div class="col-sm-4 text-right" >
-        Bridge
-        {{
-        input
-        type="text"
-        class="bridge"
-        action=""
-        }} 
-
-        
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-sm-4 text-right" >
-        PIM
-        {{
-        input
-        type="text"
-        class="pim"
-        action=""
-        }}     
-        </div>
-
-        <div class="col-sm-4 text-right" >
-        GPS
-        {{
-        input
-        type="text"
-        class="gps"
-        action=""
-        }} 
-
-        
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-4 text-right" >
-        SR#
-        {{
-        input
-        type="text"
-        class="sr"
-        action=""
-        }}     
-        </div>
-
-        <div class="col-sm-4 text-right" >
-        History
-        {{
-        input
-        type="text"
-        class="history"
-        action=""
-        }} 
-        </div>
-        </div>
-
-        <div class="row">
-      <div class="col-sm-6 last-row" >
-        Technician Contact
+       <div class="col-sm-2 text-right">Technician Contact</div>
+      <div class="col-sm-2" >
         {{
         input
         type="text"
         class="tech-contact"
         action=""
+        placeholder="Contact"
+        }} 
+        </div>
+<div class="col-sm-2 text-right">Bridge</div>
+        <div class="col-sm-2" >
+        {{
+        input
+        type="text"
+        class="bridge"
+        action=""
+        placeholder="Bridge"
+        }} 
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-2 text-right">PIM</div>
+      <div class="col-sm-2" >
+        {{
+        input
+        type="text"
+        class="pim"
+        action=""
+        placeholder="PIM"
+        }}     
+        </div>
+<div class="col-sm-2 text-right">GPS</div>
+        <div class="col-sm-2" >
+        {{
+        input
+        type="text"
+        class="gps"
+        action=""
+        placeholder="GPS"
+        }} 
+
+        
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2 text-right">SR#</div>
+      <div class="col-sm-2" >
+        {{
+        input
+        type="text"
+        class="sr"
+        action=""
+        placeholder="SR#"
+        }}     
+        </div>
+<div class="col-sm-2 text-right">History</div>
+        <div class="col-sm-2" >
+        {{
+        input
+        type="text"
+        class="history"
+        action=""
+        placeholder="History"
+        }} 
+        </div>
+        </div>
+
+        <div class="row">
+           <div class="col-sm-2 text-right" >Address</div> 
+      <div class="col-sm-4" >    
+        {{
+        textarea
+        type="text"
+        class="address"
+         placeholder="Address"
+        value=address
         }}     
         </div>
       </div>
@@ -180,47 +182,47 @@
   {{#aitem.body}}
 
     <div class="row">
-      <div class="col-sm-4 text-right" >
-        IP Address
+      <div class="col-sm-2 text-right">IP Address</div>
+      <div class="col-sm-2" >
         {{
         input
         type="text"
         class="tech-details"
         action=""
+        placeholder="IP Address"
         }}     
         </div>
-
-        <div class="col-sm-4 text-right" >
-        VLAN
+<div class="col-sm-2 text-right">VLAN</div>
+        <div class="col-sm-2" >
         {{
         input
         type="text"
         class="tech-details"
         action=""
+        placeholder="VLAN"
         }} 
-
-        
       </div>
     </div>
 
      <div class="row">
-      <div class="col-sm-4 text-right" >
-        PER Info
+       <div class="col-sm-2 text-right">PER Info</div>
+      <div class="col-sm-2" >
         {{
         input
         type="text"
         class="tech-details"
         action=""
+        placeholder="PER"
         }}     
         </div>
-
-        <div class="col-sm-4 text-right" >
-        Circuit Id
+<div class="col-sm-2 text-right">Circuit Id</div>
+        <div class="col-sm-2" >
         {{
         input
         type="text"
         class="tech-details"
-        action=""
+        placeholder="Circuit ID"
+        value=circuitId
         }} 
 
         
@@ -228,91 +230,112 @@
     </div>
     
     <div class="row">
-      <div class="col-sm-4 text-right" >
-        HostName
+      <div class="col-sm-2 text-right">HostName</div>
+      <div class="col-sm-2">
         {{
         input
         type="text"
         class="tech-details"
         action=""
+        placeholder="HostName"
         }}     
         </div>
-
-        <div class="col-sm-4 text-right" >
-        LTE
+<div class="col-sm-2 text-right">LTE</div>
+        <div class="col-sm-2" >
         {{
         input
         type="text"
         class="tech-details"
+        placeholder="LTE"
         action=""
         }} 
-
-        
       </div>
     </div>
 
     <div class="row">
-      <div class="col-sm-4 text-right" >
-        S.No/MAC address
+      <div class="col-sm-2 text-right"> S.No/MAC address</div>
+      <div class="col-sm-2" >
+       
         {{
         input
         type="text"
         class="tech-details"
         action=""
+        placeholder="MAC"
         }}     
         </div>
-
-        <div class="col-sm-4 text-right" >
-        vNF info
+<div class="col-sm-2 text-right">VNF Info</div>
+        <div class="col-sm-2" >
         {{
         input
         type="text"
         class="tech-details"
         action=""
+        placeholder="VNF"
         }} 
         </div>
         </div>
 
         <div class="row">
-      <div class="col-sm-6 last-row-sec" >
-        DEMARC
+      <div class="col-sm-2 text-right" >DEMARC</div> 
+      <div class="col-sm-4" >  
         {{
         input
         type="text"
         class="tech-details"
         action=""
+        placeholder="DEMARC"
         }}     
         </div>
       </div>
     
   {{/aitem.body}}
-  
   {{/acc.item}}
-
 {{/bs-accordion}}
-
-</div>
-
-<footer id="footer">
-    {{!-- ATT logo --}}
-    <img src='{{rootURL}}assets/images/att_footer_logo.png' class='img-responsive footerImage' alt='AT&T Logo'>
-
-    {{!-- Footer link--}}
-    <div class='footerLink'>
-        
-    </div>
-
-    {{!-- version/release --}}
-    <div id="version-release">
-        
-        <span>Powered By BizOps </span>
-    </div>
-
-    {{!-- copyright --}}
-    <div id="copyright">
-        Copyright 2018 AT&amp;T Services, Inc. All Rights reserved.
+{{#if openAcc1 }}
+{{#unless openAcc }}
+<footer id="footer1">
+         <div id="copyright">
+        <span class="pull-left">Powered By BizOps </span><br/>
+        <span class="pull-left">Copyright 2018 AT&amp;T Services, Inc. All Rights reserved.</span>
     </div>
 </footer>
+{{/unless}}
+{{/if}}
+{{#if openAcc}}
+{{#unless openAcc1 }}
+<footer id="footer1">
+         <div id="copyright">
+        <span class="pull-left">Powered By BizOps </span><br/>
+        <span class="pull-left">Copyright 2018 AT&amp;T Services, Inc. All Rights reserved.</span>
+    </div>
+</footer>
+{{/unless}}
+{{/if}}
+{{#if openAcc}}
+{{#if openAcc1}}
+<footer id="footer1">
+         <div id="copyright">
+        <span class="pull-left">Powered By BizOps </span><br/>
+        <span class="pull-left">Copyright 2018 AT&amp;T Services, Inc. All Rights reserved.</span>
+    </div>
+</footer>
+{{/if}}
+{{/if}}
+{{#unless openAcc}}
+{{#unless openAcc1}}
+<footer id="footer2">
+         <div id="copyright">
+        <span class="pull-left">Powered By BizOps </span><br/>
+        <span class="pull-left">Copyright 2018 AT&amp;T Services, Inc. All Rights reserved.</span>
+    </div>
+</footer>
+{{/unless}}
+{{/unless}}
+</div>
+
+
+
 
 {{outlet}}
 
