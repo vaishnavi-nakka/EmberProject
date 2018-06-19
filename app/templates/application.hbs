@@ -1,33 +1,35 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-    <a id="title" class="navbar-brand" href="#">
-       UV
-    </a>
+<div class="header">
+    <nav class="navbar navbar-default navud">
+        <div class='container-fluid'>
 
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
+            <div class="navbar-header ">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar5">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
-        <ul class="navbar-nav mr-auto pull-right">
-          <li>
-            <img id="profile" src="/assets/images/profile.png" width="45" height="45" class="d-inline-block pull-right" alt="">
-          </li>
-          <li class="nav-item">
-            <h4 id="uname">XYZ</h4>
-          </li>
-              
+                {{!-- image header --}}
+                <a class="navbar-brand" ><img src="{{rootURL}}{{imgPath}}{{templateImg}}.png">
+                    <span id="projectname">UV</span>
+                    <span class="version">&nbsp; 1.0</span> 
+                </a>
+            </div>
 
-        </ul>
+            <div id="navbar5" class="navbar-collapse collapse rightnav">
+                <ul class="nav navbar-nav navbar-right" >
+                    {{!-- user --}}
+                    <li>
+                        <img id="personemoticon" class="img-thumbnail" width="45" height="45" src="/assets/images/default_profile.jpg" class="img-circle">
+                        <span style="font-size:18px;"><b>&nbsp;XYZ</b></span> 
+                    </li>
+                </ul>
+            </div>
 
-
-
-
-
-
-
-      </div>
-    </div>
-  </div>
-</nav>
+        </div>
+    </nav>
+</div>
 
 
 <div class="container">

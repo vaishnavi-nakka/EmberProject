@@ -8,11 +8,13 @@ body{
 
 
 .panel-default .panel-heading{
-    background-color: #555;
+    background-color:  #ff944d;
+    font-family: Arial;
 }
 
 .panel-body{
-    background-color: lightblue;
+    background-color: #ffffe6;
+    font-family: Arial;
 }
 
 #order{
@@ -22,15 +24,9 @@ body{
 .accord-title{
     color: white;
     font-size: 1px;
+    font-family: Arial;
 }
 
-// .last-row{
-//     margin-left: 6.5%;
-// }
-// .address{
-//     height: 80%;
-//     width:90%;
-// }
 .last-row-sec{
     margin-left: 12%;
 }
@@ -38,11 +34,12 @@ body{
 .panel-title {
     
     font-size: 14px;
-
+    font-family: Arial;
 }
 
 .panel-heading{
     font-size: 16px;
+    font-family: Arial;
 }
 
   #footer2 {
@@ -62,63 +59,91 @@ body{
     width: 100%;
   }
       
-      
-      
-//       /*link hover color */
-//   footer a, a::before {
-//       color:#959595;
-      
-//   }
-  
-//   .footerLink{
-//       margin-bottom:5px;
-//   }
 
-//   .footerImage {
-// 	margin: 24px auto 11px;
-// }
+
 
 .headOptions{
     padding:10px;
   }
 
- 
-//   .btn{
-//     margin-left: 5%;
-//   }
 
-//   #gps-id{
-//     margin-left: 0%;
-//   }
 
 .navbar{
-    background-color: #555;
+    background-color: #ff751a;
 }
 
 .navbar-brand{
-    font-size: 190%;
     color: white;
     
 }
 #title{
-    margin-left: 5%;
+    color: white;
+    text-decoration: none;
 }
 #username{
     margin-left: 600px;
     margin-top: 15px;
     color: white;
 }
-
-#profile{
-    margin-left: 94.5%;
+.container{
+    font-family: Arial;
 }
+
 
 ul {
     list-style-type: none;
   }
 
-#uname{
-    margin-left: 30%;
-    margin-top: 45%;
+
+.version{
+    font-size: 30px;
 }
 
+.header .navbar-brand {
+    display: flex;
+    align-items: center;
+    color: #FFF;
+    margin-top:10px;
+   
+  }
+  .header .navbar-brand>img {
+    padding: 7px 14px;
+  }
+
+.navud {
+  background-color: #ff751a;
+  color: #FFF;
+  border-radius: 0px !important;
+}
+
+  .navbar-default .navbar-brand {
+  padding: 0px;
+  }
+
+  .navbar-default .navbar-brand:focus {
+    color: #fff;
+  }
+
+  .navbar-default .navbar-brand:hover {
+    color: #fff;
+  }
+
+.navbar-brand #projectname {
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.navbar-brand > img {
+  height: 40px;
+  padding: 0px !important;
+  width: 40px;
+  margin-right: 5px;
+}
+
+.rightnav ul li {
+  width: 130px;
+  margin-top: 6px;
+  margin-left: 3.5%;
+  cursor: pointer;
+}
