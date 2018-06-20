@@ -39,7 +39,7 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-sm-2 text-right">
-          <b>OMX#</b>
+          <b>OMX#</b> 
         </div>
         <div class="col-sm-2">
           {{ input type="text" class="omx-id" placeholder="OMX-ID" key-up="omxGpsCheck" value=omxSearch }}
@@ -50,7 +50,7 @@
         <div class="col-sm-3">
           {{ input type="text" id="gps-id" placeholder="GPS-ID" key-up="omxGpsCheck" value=gpsSearch }}
         </div>
-        <div class="col-sm-1">
+        <div class="col-sm-2">
           <button type="button" class="btn" {{action "onSubmit" omxSearch gpsSearch}} disabled={{checkOmxGps}}>
            {{#if isLoading}}
            <i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
@@ -58,6 +58,7 @@
            Search
            {{/if}}
           </button>
+          <button type="button" class="btn" {{action "onReset"}} disabled={{checkReset}}> Reset </button>
           
           {{!-- {{bs-button type="button" class="btn" defaultText="Start download" pendingText="Downloading..." resolvedText="Download complete!" onClick=(action "onSubmit" omxSearch gpsSearch)}} --}}
         </div>
@@ -122,9 +123,9 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-2 text-right">Address</div>
+    <div class="col-sm-2 text-right">Site-Address</div>
     <div class="col-sm-2">
-      {{ textarea type="text" class="address" placeholder="Address" value=address }}
+      {{ textarea type="text" id="site-address" class="address" placeholder="Address" value=address }}
     </div>
     <div class="col-sm-6 text-right">
       <div class="row">
@@ -162,11 +163,11 @@
   <div class="row">
     <div class="col-sm-2 text-right">IP Address</div>
     <div class="col-sm-2">
-      {{ input type="text" class="tech-details" action="" placeholder="IP Address" }}
+      {{ input type="text" class="tech-details" value=ip placeholder="IP Address" }}
     </div>
     <div class="col-sm-2 text-right">VLAN</div>
     <div class="col-sm-2">
-      {{ input type="text" class="tech-details" action="" placeholder="VLAN" }}
+      {{ input type="text" class="tech-details" value=vLan placeholder="VLAN" }}
     </div>
   </div>
 
@@ -179,7 +180,7 @@
     </div>
     <div class="col-sm-2 text-right">PER Info</div>
     <div class="col-sm-2">
-      {{ input type="text" class="tech-details" action="" placeholder="PER" }}
+      {{ input type="text" class="tech-details" value=perInfo placeholder="PER" }}
     </div>
     
   </div>
@@ -187,11 +188,11 @@
   <div class="row">
     <div class="col-sm-2 text-right">HostName</div>
     <div class="col-sm-2">
-      {{ input type="text" class="tech-details" action="" placeholder="HostName" }}
+      {{ input type="text" class="tech-details" value=hostName placeholder="HostName" }}
     </div>
     <div class="col-sm-2 text-right">LTE</div>
     <div class="col-sm-2">
-      {{ input type="text" class="tech-details" placeholder="LTE" action="" }}
+      {{ input type="text" class="tech-details" placeholder="LTE" value=lte }}
     </div>
   </div>
 
@@ -199,18 +200,18 @@
     <div class="col-sm-2 text-right"> S.No/MAC address</div>
     <div class="col-sm-2">
 
-      {{ input type="text" class="tech-details" action="" placeholder="MAC" }}
+      {{ input type="text" class="tech-details" value=mac placeholder="MAC" }}
     </div>
     <div class="col-sm-2 text-right">VNF Info</div>
     <div class="col-sm-2">
-      {{ input type="text" class="tech-details" action="" placeholder="VNF" }}
+      {{ input type="text" class="tech-details" value=vnfInfo placeholder="VNF" }}
     </div>
   </div>
 
   <div class="row">
     <div class="col-sm-2 text-right">DEMARC</div>
     <div class="col-sm-4">
-      {{ input type="text" class="tech-details" action="" placeholder="DEMARC" }}
+      {{ input type="text" class="tech-details" value=demarc placeholder="DEMARC" }}
     </div>
   </div>
 

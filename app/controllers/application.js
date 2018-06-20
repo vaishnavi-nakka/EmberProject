@@ -2,16 +2,15 @@ import Controller from '@ember/controller';
 import $ from 'jquery';
 export default Controller.extend({
     openAcc : true,
-    openAcc1 : true,
-    omx:'',
-    circuitId:'',
-    address:'',
+    openAcc1 : true, 
     isLoading: false,
     checkOmxGps: true,
     omxSearch: '',
+    gpsSearch: '',
+    checkReset: true,
     actions: {
         omxGpsCheck: function(){
-            if((this.omxSearch !== '') || (this.gpsSearch !=="") ){
+            if( (this.omxSearch.match(/\d{9}/)) || (this.gpsSearch.match(/\d{9}/)) ){
                 this.set('checkOmxGps',false);
             }else{
                 this.set('checkOmxGps',true);
@@ -32,7 +31,10 @@ export default Controller.extend({
                         }
                     }).then(data=>{
                         this.set('omx',data.OrderNumber);
-                        this.set('circuitId',data.CktId);
+                        if(data.Product=="UCPE"){
+                            this.set('hostName',data.CktId);
+                        }else{
+                        this.set('circuitId',data.CktId);}
                         let add = data.AddressStreet + ", "+data.AddressCity +", "+ data.AddressState +", "+data.AddressZip; 
                         this.set('address',add);
                         this.set('customer',data.Customer);
@@ -42,11 +44,22 @@ export default Controller.extend({
                         this.set('isLoading',false);
                         this.set('omxSearch','');
                        this.set('checkOmxGps',true);
-                       document.getElementById('ember298').click();
-                       document.getElementById('ember330').click();
+                       document.getElementById('ember299').click();
+                       document.getElementById('ember331').click();
+                        this.toggleProperty('checkReset');
                     });
 
             }
+        },
+        onReset(){
+            document.getElementById("site-address").value="";
+            let elements = document.getElementsByTagName("input");
+            for(let i=0;i<elements.length;i++){
+                elements[i].value="";
+            }
+            document.getElementById('ember299').click();
+            document.getElementById('ember331').click();
+            this.toggleProperty('checkReset');
         },
         toggleAccordian(){
             
