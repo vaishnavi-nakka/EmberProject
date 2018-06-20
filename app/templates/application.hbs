@@ -11,10 +11,10 @@
                 </button>
 
                 {{!-- image header --}}
-                <a class="navbar-brand" ><img src="{{rootURL}}{{imgPath}}{{templateImg}}.png">
-                    <span id="projectname">UV</span>
+              <a class="navbar-brand" >
+                    <span id="projectname"> &nbsp;&nbsp;  UV</span>
                     <span class="version">&nbsp; 1.0</span> 
-                </a>
+                </a> 
             </div>
 
             <div id="navbar5" class="navbar-collapse collapse rightnav">
@@ -35,7 +35,7 @@
 <div class="container">
 
   <div class="panel panel-default">
-    <div class="panel-heading" id="order">Order-Search</div>
+    <div class="panel-heading" id="order"><b>Order-Search</b></div>
     <div class="panel-body">
       <div class="row">
         <div class="col-sm-2 text-right">
@@ -61,7 +61,7 @@
 
   {{#bs-accordion id="acc"as |acc|}} {{#acc.item value="1" as |aitem|}}
   <div class="accord-title" {{action "toggleAccordian"}}>
-    {{#aitem.title}} Site Information {{#if openAcc}}
+    {{#aitem.title}} <b>Site Information </b>{{#if openAcc}}
     <span class="glyphicon glyphicon-chevron-down pull-right"></span>
     {{else}}
     <span class="glyphicon glyphicon-chevron-up pull-right"></span>
@@ -128,7 +128,7 @@
 
   {{/aitem.body}} {{/acc.item}} {{/bs-accordion}} {{#bs-accordion as |acc|}} {{#acc.item value="2" as |aitem|}}
   <div class="accord-title" {{action "toggleAccordian1"}}>
-    {{#aitem.title}} Technical Details {{#if openAcc1}}
+    {{#aitem.title}} <b>Technical Details </b>{{#if openAcc1}}
     <span class="glyphicon glyphicon-chevron-down pull-right"></span>
     {{else}}
     <span class="glyphicon glyphicon-chevron-up pull-right"></span>
@@ -149,16 +149,17 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-2 text-right">PER Info</div>
-    <div class="col-sm-2">
-      {{ input type="text" class="tech-details" action="" placeholder="PER" }}
-    </div>
-    <div class="col-sm-2 text-right">Circuit Id</div>
+<div class="col-sm-2 text-right">Circuit Id</div>
     <div class="col-sm-2">
       {{ input type="text" class="tech-details" placeholder="Circuit ID" value=circuitId }}
 
 
     </div>
+    <div class="col-sm-2 text-right">PER Info</div>
+    <div class="col-sm-2">
+      {{ input type="text" class="tech-details" action="" placeholder="PER" }}
+    </div>
+    
   </div>
 
   <div class="row">
