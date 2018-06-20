@@ -6,8 +6,10 @@ export default Controller.extend({
     omx:'',
     circuitId:'',
     address:'',
+    isLoading: false,
     actions: {
         onSubmit(omxSearch, gpsSearch){
+            this.toggleProperty('isLoading');
             console.log(omxSearch);
             console.log(gpsSearch);
             if(omxSearch !== undefined){
@@ -29,7 +31,13 @@ export default Controller.extend({
                         this.set('customer',data.Customer);
                         this.set('lcon',data.ContactList[0].FirstName+" "+data.ContactList[0].LastName );
                         this.set('email',data.ContactList[0].Email);
-                        this.$().on('click', 'acc');
+                        this.set('lc',data.ContactList[0].PhoneWork);
+                        console.log('isloading'+this.isLoading);
+                        this.set('isLoading',false);
+                        this.set('omxSearch','');
+                        // this.$().on('click', 'acc');
+                        
+                       
                     });
 
             }

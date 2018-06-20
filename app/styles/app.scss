@@ -6,6 +6,11 @@ body{
     
 }
 
+textarea {
+  resize: none;
+  height: 80px;
+  width: 150px;
+}
 
 .panel-default .panel-heading{
     background-color:  #959595;

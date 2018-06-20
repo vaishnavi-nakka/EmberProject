@@ -51,9 +51,15 @@
           {{ input type="text" id="gps-id" placeholder="GPS-ID" value=gpsSearch }}
         </div>
         <div class="col-sm-1">
-          <button type="button" class="btn" {{action "onSubmit" omxSearch gpsSearch}}>Search</button>
-          {{!-- {{bs-button defaultText="Start download" pendingText="Downloading..." resolvedText="Download complete!" onClick=(action
-          "onSubmit" omxSearch gpsSearch)}} --}}
+          <button type="button" class="btn" {{action "onSubmit" omxSearch gpsSearch}}>
+           {{#if isLoading}}
+           <i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+           {{else}}
+           Search
+           {{/if}}
+          </button>
+          
+          {{!-- {{bs-button type="button" class="btn" defaultText="Start download" pendingText="Downloading..." resolvedText="Download complete!" onClick=(action "onSubmit" omxSearch gpsSearch)}} --}}
         </div>
       </div>
     </div>
@@ -267,7 +273,6 @@
   </footer>
   {{/unless}} {{/unless}}
 </div>
-
 
 
 
