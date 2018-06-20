@@ -42,16 +42,16 @@
           <b>OMX#</b>
         </div>
         <div class="col-sm-2">
-          {{ input type="text" class="omx-id" placeholder="OMX-ID" value=omxSearch }}
+          {{ input type="text" class="omx-id" placeholder="OMX-ID" key-up="omxGpsCheck" value=omxSearch }}
         </div>
         <div class="col-sm-2 text-right">
           <b>GPS#</b>
         </div>
         <div class="col-sm-3">
-          {{ input type="text" id="gps-id" placeholder="GPS-ID" value=gpsSearch }}
+          {{ input type="text" id="gps-id" placeholder="GPS-ID" key-up="omxGpsCheck" value=gpsSearch }}
         </div>
         <div class="col-sm-1">
-          <button type="button" class="btn" {{action "onSubmit" omxSearch gpsSearch}}>
+          <button type="button" class="btn" {{action "onSubmit" omxSearch gpsSearch}} disabled={{checkOmxGps}}>
            {{#if isLoading}}
            <i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
            {{else}}
@@ -65,7 +65,7 @@
     </div>
   </div>
 
-  {{#bs-accordion id="acc"as |acc|}} {{#acc.item value="1" as |aitem|}}
+  {{#bs-accordion id="acc" as |acc|}} {{#acc.item value="1" as |aitem|}}
   <div class="accord-title" {{action "toggleAccordian"}}>
     {{#aitem.title}} <b>Site Information </b>{{#if openAcc}}
     <span class="glyphicon glyphicon-chevron-down pull-right"></span>
@@ -214,49 +214,8 @@
     </div>
   </div>
 
-  {{/aitem.body}} {{/acc.item}} {{/bs-accordion}} {{#if openAcc1 }} {{#unless openAcc }}
-  <footer id="footer1">
-    <div id="copyright">
-       <span class="pull-left">
-        <img  width="45" height="45" src="/assets/images/BizOpsLogo.jpg">&nbsp;
-        <br/>
-      </span>
-      <span class="pull-left">
-        
-        Powered By BizOps </span>
-        
-      <br/>
-      <span class="pull-left">Copyright 2018 AT&amp;T Services, Inc. All Rights reserved.</span>
-    </div>
-  </footer>
-  {{/unless}} {{/if}} {{#if openAcc}} {{#unless openAcc1 }}
-  <footer id="footer1">
-    <div id="copyright">
-       <span class="pull-left">
-        <img width="45" height="45" src="/assets/images/BizOpsLogo.jpg">&nbsp;
-        <br/>
-      </span>
-      <span class="pull-left">
-        
-        Powered By BizOps </span>
-      <br/>
-      <span class="pull-left">Copyright 2018 AT&amp;T Services, Inc. All Rights reserved.</span>
-    </div>
-  </footer>
-  {{/unless}} {{/if}} {{#if openAcc}} {{#if openAcc1}}
-  <footer id="footer1">
-    <div id="copyright">
-       <span class="pull-left">
-        <img width="45" height="45" src="/assets/images/BizOpsLogo.jpg">&nbsp;
-        <br/>
-        </span>
-      <span class="pull-left">
-        Powered By BizOps </span>
-      <br/>
-      <span class="pull-left">Copyright 2018 AT&amp;T Services, Inc. All Rights reserved.</span>
-    </div>
-  </footer>
-  {{/if}} {{/if}} {{#unless openAcc}} {{#unless openAcc1}}
+  {{/aitem.body}} {{/acc.item}} {{/bs-accordion}} 
+ {{#unless (and openAcc openAcc1)}}
   <footer id="footer2">
     <div id="copyright">
 
@@ -271,7 +230,23 @@
       <span class="pull-left">Copyright 2018 AT&amp;T Services, Inc. All Rights reserved.</span>
     </div>
   </footer>
-  {{/unless}} {{/unless}}
+  {{else}}
+  <footer id="footer1">
+    <div id="copyright">
+       <span class="pull-left">
+        <img  width="45" height="45" src="/assets/images/BizOpsLogo.jpg">&nbsp;
+        <br/>
+      </span>
+      <span class="pull-left">
+        
+        Powered By BizOps </span>
+        
+      <br/>
+      <span class="pull-left">Copyright 2018 AT&amp;T Services, Inc. All Rights reserved.</span>
+    </div>
+  </footer>
+
+  {{/unless}} 
 </div>
 
 

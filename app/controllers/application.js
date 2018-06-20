@@ -7,11 +7,19 @@ export default Controller.extend({
     circuitId:'',
     address:'',
     isLoading: false,
+    checkOmxGps: true,
+    omxSearch: '',
     actions: {
+        omxGpsCheck: function(){
+            if((this.omxSearch !== '') || (this.gpsSearch !=="") ){
+                this.set('checkOmxGps',false);
+            }else{
+                this.set('checkOmxGps',true);
+            }
+            
+        },
         onSubmit(omxSearch, gpsSearch){
             this.toggleProperty('isLoading');
-            console.log(omxSearch);
-            console.log(gpsSearch);
             if(omxSearch !== undefined){
                 let url = "http://localhost:1337/nicsd.bhdc.att.com/watsonapi/v1/ocx/getorderdata/"+omxSearch;
                 $.ajax({
@@ -23,7 +31,6 @@ export default Controller.extend({
                             Authorization:'Basic ' + btoa('UD:R7iDFT8W2r')
                         }
                     }).then(data=>{
-                        console.log(data.OrderNumber);
                         this.set('omx',data.OrderNumber);
                         this.set('circuitId',data.CktId);
                         let add = data.AddressStreet + ", "+data.AddressCity +", "+ data.AddressState +", "+data.AddressZip; 
@@ -32,18 +39,16 @@ export default Controller.extend({
                         this.set('lcon',data.ContactList[0].FirstName+" "+data.ContactList[0].LastName );
                         this.set('email',data.ContactList[0].Email);
                         this.set('lc',data.ContactList[0].PhoneWork);
-                        console.log('isloading'+this.isLoading);
                         this.set('isLoading',false);
                         this.set('omxSearch','');
-                        // this.$().on('click', 'acc');
-                        
-                       
+                       this.set('checkOmxGps',true);
+                       document.getElementById('ember298').click();
+                       document.getElementById('ember330').click();
                     });
 
             }
         },
         toggleAccordian(){
-            console.log("inside toggleacc");
             
             this.toggleProperty('openAcc');
            
@@ -51,7 +56,6 @@ export default Controller.extend({
             
         },
         toggleAccordian1(){
-            console.log("inside toggleacc1");
             
             this.toggleProperty('openAcc1');
            
