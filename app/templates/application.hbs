@@ -47,10 +47,10 @@
         <div class="col-sm-2 text-right">
           <b>GPS#</b>
         </div>
-        <div class="col-sm-2">
+        <div class="col-sm-3">
           {{ input type="text" id="gps-id" placeholder="GPS-ID" value=gpsSearch }}
         </div>
-        <div class="col-sm-2">
+        <div class="col-sm-1">
           <button type="button" class="btn" {{action "onSubmit" omxSearch gpsSearch}}>Search</button>
           {{!-- {{bs-button defaultText="Start download" pendingText="Downloading..." resolvedText="Download complete!" onClick=(action
           "onSubmit" omxSearch gpsSearch)}} --}}
@@ -71,58 +71,74 @@
 
   {{#aitem.body}}
   <div class="row">
-    <div class="col-sm-2 text-right"> LCON</div>
-    <div class="col-sm-2">
-      {{ input type="text" class="lcon" action="" placeholder="lcon" value=Lcon }}
-    </div>
     <div class="col-sm-2 text-right">OMX</div>
     <div class="col-sm-2">
       {{ input type="text" class="omx" placeholder="OMX" value=omx }}
-
-
-
     </div>
+    <div class="col-sm-2 text-right"> LCON</div>
+    <div class="col-sm-2">
+      {{ input type="text" class="lcon"  placeholder="lcon" value=lcon }}
+    </div>
+    
   </div>
-
-  <div class="row">
-    <div class="col-sm-2 text-right">Technician Contact</div>
-    <div class="col-sm-2">
-      {{ input type="text" class="tech-contact" action="" placeholder="Contact" }}
-    </div>
-    <div class="col-sm-2 text-right">Bridge</div>
-    <div class="col-sm-2">
-      {{ input type="text" class="bridge" action="" placeholder="Bridge" }}
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-2 text-right">PIM</div>
-    <div class="col-sm-2">
-      {{ input type="text" class="pim" action="" placeholder="PIM" }}
-    </div>
-    <div class="col-sm-2 text-right">GPS</div>
-    <div class="col-sm-2">
-      {{ input type="text" class="gps" action="" placeholder="GPS" }}
-
-
-    </div>
-  </div>
-
-  <div class="row">
+<div class="row">
     <div class="col-sm-2 text-right">SR#</div>
     <div class="col-sm-2">
-      {{ input type="text" class="sr" action="" placeholder="SR#" }}
+      {{ input type="text" class="sr"  placeholder="SR#" value=sr  }}
     </div>
+    <div class="col-sm-2 text-right">LCON #</div>
+    <div class="col-sm-2">
+      {{ input type="text" class="LCON"  placeholder="LCON #" value=lc }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2 text-right">Customer Name</div>
+    <div class="col-sm-2">
+      {{ input type="text" class="customer" value=customer placeholder="Customer" }}
+    </div>
+    <div class="col-sm-2 text-right">E-mail</div>
+    <div class="col-sm-2">
+      {{ input type="text" class="email" value=email placeholder="E-mail" }}
+    </div>
+    
+    
+  </div>
+
+  <div class="row">
     <div class="col-sm-2 text-right">History</div>
     <div class="col-sm-2">
-      {{ input type="text" class="history" action="" placeholder="History" }}
+      {{ input type="text" class="history" value=history placeholder="History" }}
+    </div>
+    <div class="col-sm-2 text-right">PIM</div>
+    <div class="col-sm-2">
+      {{ input type="text" class="pim" value=pim placeholder="PIM" }}
     </div>
   </div>
 
   <div class="row">
     <div class="col-sm-2 text-right">Address</div>
-    <div class="col-sm-4">
+    <div class="col-sm-2">
       {{ textarea type="text" class="address" placeholder="Address" value=address }}
+    </div>
+    <div class="col-sm-6 text-right">
+      <div class="row">
+    <div class="col-sm-4 text-right">L.E.</div>
+    <div class="col-sm-2">
+      {{ input type="text" class="le" placeholder="Lead Engineer" value=le }}
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-sm-4 text-right">P.M.</div>
+    <div class="col-sm-2">
+      {{ input type="text" class="pm" placeholder="P.M" value=pm }}
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-sm-4 text-right">Tech-Info</div>
+    <div class="col-sm-2">
+      {{ input type="text" class="techinfo" placeholder="Info" value=techinfo }}
+    </div>
+    </div>
     </div>
   </div>
 

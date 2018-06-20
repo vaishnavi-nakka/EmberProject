@@ -26,6 +26,9 @@ export default Controller.extend({
                         this.set('circuitId',data.CktId);
                         let add = data.AddressStreet + ", "+data.AddressCity +", "+ data.AddressState +", "+data.AddressZip; 
                         this.set('address',add);
+                        this.set('customer',data.Customer);
+                        this.set('lcon',data.ContactList[0].FirstName+" "+data.ContactList[0].LastName );
+                        this.set('email',data.ContactList[0].Email);
                         this.$().on('click', 'acc');
                     });
 
