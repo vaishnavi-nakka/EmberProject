@@ -9,6 +9,22 @@ export default Controller.extend({
     gpsSearch: '',
     checkReset: true,
     fields: ['omxSearch', 'gpsSearch', 'omx', 'lcon', 'sr', 'lc', 'customer', 'email', 'history', 'pim', 'address', 'le', 'pm', 'techinfo', 'ip', 'vLan', 'circuitId', 'perInfo', 'hostName', 'lte', 'mac', 'vnfInfo', 'demarc'],
+    init(){
+        this._super(...arguments);
+        document.addEventListener("keydown", function (event) {
+            console.log("inside event list");
+            if (event.keyCode == 113 ) {
+                
+                    console.log("success");
+                    Ember.$('#reset-btn').click();
+                
+                
+
+            }
+          
+            
+          });
+    },
     actions: {
         omxGpsCheck: function () {
 
@@ -50,8 +66,14 @@ export default Controller.extend({
                     this.set('isLoading', false);
                     this.set('omxSearch', '');
                     this.set('checkOmxGps', true);
-                    Ember.$('#ember299').click();
+                    console.log(this.openAcc);
+                    console.log(this.openAcc1);
+                    if(this.openAcc==true){
+                        Ember.$('#ember299').click();
+                    }
+                    if(this.openAcc1==true){
                     Ember.$('#ember331').click();
+                    }
                     this.toggleProperty('checkReset');
                 });
 
@@ -64,8 +86,12 @@ export default Controller.extend({
             for (let i = 0; i < this.fields.length; i++) {
                 this.set(this.fields[i], '');
             }
-            Ember.$('#ember299').click();
+            if(this.openAcc==false){
+                Ember.$('#ember299').click();
+            }
+            if(this.openAcc1==false){
             Ember.$('#ember331').click();
+            }
             this.toggleProperty('checkReset');
 
         },
