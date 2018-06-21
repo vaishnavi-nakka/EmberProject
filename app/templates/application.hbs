@@ -51,7 +51,7 @@
           {{ input type="text" id="gps-id" placeholder="GPS-ID" key-up="omxGpsCheck" value=gpsSearch }}
         </div>
         <div class="col-sm-2">
-          <button type="button" id="search-btn" class="btn" {{action "onSubmit" omxSearch gpsSearch}} enter={{action "onSubmit" omxSearch gpsSearch}} disabled={{checkOmxGps}}>
+          <button type="button" id="search-btn" class="btn" {{action "onSubmit" omxSearch gpsSearch}}  disabled={{checkOmxGps}}>
            {{#if isLoading}}
            <i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
            {{else}}
@@ -80,32 +80,32 @@
   <div class="row">
     <div class="col-sm-2 text-right">OMX</div>
     <div class="col-sm-2">
-      {{ input type="text" class="omx" placeholder="OMX" value=omx }}
+      {{ input type="text" class="input-field" placeholder="OMX" value=omx }}
     </div>
     <div class="col-sm-2 text-right"> LCON</div>
     <div class="col-sm-2">
-      {{ input type="text" class="lcon"  placeholder="lcon" value=lcon }}
+      {{ input type="text" class="input-field"  placeholder="lcon" value=lcon }}
     </div>
     
   </div>
 <div class="row">
     <div class="col-sm-2 text-right">SR#</div>
     <div class="col-sm-2">
-      {{ input type="text" class="sr"  placeholder="SR#" value=sr  }}
+      {{ input type="text" class="input-field"  placeholder="SR#" value=sr  }}
     </div>
     <div class="col-sm-2 text-right">LCON #</div>
     <div class="col-sm-2">
-      {{ input type="text" class="LCON"  placeholder="LCON #" value=lc }}
+      {{ input type="text" class="input-field"  placeholder="LCON #" value=lc }}
     </div>
   </div>
   <div class="row">
     <div class="col-sm-2 text-right">Customer Name</div>
     <div class="col-sm-2">
-      {{ input type="text" class="customer" value=customer placeholder="Customer" }}
+      {{ input type="text" class="input-field" value=customer placeholder="Customer" }}
     </div>
     <div class="col-sm-2 text-right">E-mail</div>
     <div class="col-sm-2">
-      {{ input type="text" class="email" value=email placeholder="E-mail" }}
+      {{ input type="text" class="input-field" value=email placeholder="E-mail" }}
     </div>
     
     
@@ -114,36 +114,36 @@
   <div class="row">
     <div class="col-sm-2 text-right">History</div>
     <div class="col-sm-2">
-      {{ input type="text" class="history" value=history placeholder="History" }}
+      {{ input type="text" class="input-field" value=history placeholder="History" }}
     </div>
     <div class="col-sm-2 text-right">PIM</div>
     <div class="col-sm-2">
-      {{ input type="text" class="pim" value=pim placeholder="PIM" }}
+      {{ input type="text" class="input-field" value=pim placeholder="PIM" }}
     </div>
   </div>
 
   <div class="row">
     <div class="col-sm-2 text-right">Site-Address</div>
     <div class="col-sm-2">
-      {{ textarea type="text" id="site-address" class="address" placeholder="Address" value=address }}
+      {{ textarea type="text" id="site-address" class="input-field" placeholder="Address" value=address }}
     </div>
     <div class="col-sm-6 text-right">
       <div class="row">
     <div class="col-sm-4 text-right">L.E.</div>
     <div class="col-sm-2">
-      {{ input type="text" class="le" placeholder="Lead Engineer" value=le }}
+      {{ input type="text" class="input-field" placeholder="Lead Engineer" value=le }}
     </div>
     </div>
     <div class="row">
     <div class="col-sm-4 text-right">P.M.</div>
     <div class="col-sm-2">
-      {{ input type="text" class="pm" placeholder="P.M" value=pm }}
+      {{ input type="text" class="input-field" placeholder="P.M" value=pm }}
     </div>
     </div>
     <div class="row">
     <div class="col-sm-4 text-right">Tech-Info</div>
     <div class="col-sm-2">
-      {{ input type="text" class="techinfo" placeholder="Info" value=techinfo }}
+      {{ input type="text" class="input-field" placeholder="Info" value=techinfo }}
     </div>
     </div>
     </div>
@@ -163,24 +163,24 @@
   <div class="row">
     <div class="col-sm-2 text-right">IP Address</div>
     <div class="col-sm-2">
-      {{ input type="text" class="tech-details" value=ip placeholder="IP Address" }}
+      {{ input type="text" class="input-field" value=ip placeholder="IP Address" }}
     </div>
     <div class="col-sm-2 text-right">VLAN</div>
     <div class="col-sm-2">
-      {{ input type="text" class="tech-details" value=vLan placeholder="VLAN" }}
+      {{ input type="text" class="input-field" value=vLan placeholder="VLAN" }}
     </div>
   </div>
 
   <div class="row">
 <div class="col-sm-2 text-right">Circuit Id</div>
     <div class="col-sm-2">
-      {{ input type="text" class="tech-details" placeholder="Circuit ID" value=circuitId }}
+      {{ input type="text" class="input-field" placeholder="Circuit ID" value=circuitId }}
 
 
     </div>
     <div class="col-sm-2 text-right">PER Info</div>
     <div class="col-sm-2">
-      {{ input type="text" class="tech-details" value=perInfo placeholder="PER" }}
+      {{ input type="text" class="input-field" value=perInfo placeholder="PER" }}
     </div>
     
   </div>
@@ -188,11 +188,11 @@
   <div class="row">
     <div class="col-sm-2 text-right">HostName</div>
     <div class="col-sm-2">
-      {{ input type="text" class="tech-details" value=hostName placeholder="HostName" }}
+      {{ input type="text" class="input-field" value=hostName placeholder="HostName" }}
     </div>
     <div class="col-sm-2 text-right">LTE</div>
     <div class="col-sm-2">
-      {{ input type="text" class="tech-details" placeholder="LTE" value=lte }}
+      {{ input type="text" class="input-field" placeholder="LTE" value=lte }}
     </div>
   </div>
 
@@ -200,18 +200,18 @@
     <div class="col-sm-2 text-right"> S.No/MAC address</div>
     <div class="col-sm-2">
 
-      {{ input type="text" class="tech-details" value=mac placeholder="MAC" }}
+      {{ input type="text" class="input-field" value=mac placeholder="MAC" }}
     </div>
     <div class="col-sm-2 text-right">VNF Info</div>
     <div class="col-sm-2">
-      {{ input type="text" class="tech-details" value=vnfInfo placeholder="VNF" }}
+      {{ input type="text" class="input-field" value=vnfInfo placeholder="VNF" }}
     </div>
   </div>
 
   <div class="row">
     <div class="col-sm-2 text-right">DEMARC</div>
     <div class="col-sm-4">
-      {{ input type="text" class="tech-details" value=demarc placeholder="DEMARC" }}
+      {{ input type="text" class="input-field" value=demarc placeholder="DEMARC" }}
     </div>
   </div>
 
