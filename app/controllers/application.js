@@ -8,7 +8,7 @@ export default Controller.extend({
     omxSearch: '',
     gpsSearch: '',
     checkReset: true,
-    fields: ['omxSearch', 'gpsSearch', 'omx','lcon','sr','lc','customer','email','history','pim','address','le','pm','techinfo','ip','vLan','circuitId','perInfo','hostName','lte','mac','vnfInfo','demarc'],
+    fields: ['omxSearch', 'gpsSearch', 'omx', 'lcon', 'sr', 'lc', 'customer', 'email', 'history', 'pim', 'address', 'le', 'pm', 'techinfo', 'ip', 'vLan', 'circuitId', 'perInfo', 'hostName', 'lte', 'mac', 'vnfInfo', 'demarc'],
     actions: {
         omxGpsCheck: function () {
 
@@ -17,12 +17,7 @@ export default Controller.extend({
             } else {
                 this.set('checkOmxGps', true);
             }
-            // document.getElementById("omx-id").addEventListener("keyup",function(event){
-            //     event.preventDefault();
-            //     if(event.keyCode===13){
-            //         document.getElementById("search-btn").click();
-            //     }
-            // });
+          
 
         },
         onSubmit(omxSearch, gpsSearch) {
@@ -49,30 +44,28 @@ export default Controller.extend({
                     let add = data.AddressStreet + ", " + data.AddressCity + ", " + data.AddressState + ", " + data.AddressZip;
                     this.set('address', add);
                     this.set('customer', data.Customer);
-                    console.log(this.customer);
                     this.set('lcon', data.ContactList[0].FirstName + " " + data.ContactList[0].LastName);
                     this.set('email', data.ContactList[0].Email);
                     this.set('lc', data.ContactList[0].PhoneWork);
                     this.set('isLoading', false);
                     this.set('omxSearch', '');
                     this.set('checkOmxGps', true);
-                    document.getElementById('ember299').click();
-                    document.getElementById('ember331').click();
+                    Ember.$('#ember299').click();
+                    Ember.$('#ember331').click();
                     this.toggleProperty('checkReset');
                 });
 
             }
         },
-        insertNewline: function() {
+        insertNewline: function () {
             Ember.$('#search-btn').click();
         },
         onReset() {
-            console.log('inside reset');
             for (let i = 0; i < this.fields.length; i++) {
-                this.set(this.fields[i],'');
+                this.set(this.fields[i], '');
             }
-            document.getElementById('ember299').click();
-            document.getElementById('ember331').click();
+            Ember.$('#ember299').click();
+            Ember.$('#ember331').click();
             this.toggleProperty('checkReset');
 
         },
