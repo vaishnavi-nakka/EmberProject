@@ -17,12 +17,12 @@ export default Controller.extend({
             } else {
                 this.set('checkOmxGps', true);
             }
-            document.getElementById("omx-id").addEventListener("keyup",function(event){
-                event.preventDefault();
-                if(event.keyCode===13){
-                    document.getElementById("search-btn").click();
-                }
-            });
+            // document.getElementById("omx-id").addEventListener("keyup",function(event){
+            //     event.preventDefault();
+            //     if(event.keyCode===13){
+            //         document.getElementById("search-btn").click();
+            //     }
+            // });
 
         },
         onSubmit(omxSearch, gpsSearch) {
@@ -62,6 +62,9 @@ export default Controller.extend({
                 });
 
             }
+        },
+        insertNewline: function() {
+            Ember.$('#search-btn').click();
         },
         onReset() {
             console.log('inside reset');
