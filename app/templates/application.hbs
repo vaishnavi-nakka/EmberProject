@@ -42,7 +42,7 @@
           <b>OMX#</b> 
         </div>
         <div class="col-sm-2">
-          {{ input type="text" class="omx-id" placeholder="OMX-ID" key-up="omxGpsCheck" value=omxSearch }}
+          {{ input type="text" id="omx-id" placeholder="OMX-ID" key-up="omxGpsCheck" value=omxSearch }}
         </div>
         <div class="col-sm-2 text-right">
           <b>GPS#</b>
@@ -51,7 +51,7 @@
           {{ input type="text" id="gps-id" placeholder="GPS-ID" key-up="omxGpsCheck" value=gpsSearch }}
         </div>
         <div class="col-sm-2">
-          <button type="button" class="btn" {{action "onSubmit" omxSearch gpsSearch}} disabled={{checkOmxGps}}>
+          <button type="button" id="search-btn" class="btn" {{action "onSubmit" omxSearch gpsSearch}} enter={{action "onSubmit" omxSearch gpsSearch}} disabled={{checkOmxGps}}>
            {{#if isLoading}}
            <i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
            {{else}}

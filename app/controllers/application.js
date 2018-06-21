@@ -10,11 +10,18 @@ export default Controller.extend({
     checkReset: true,
     actions: {
         omxGpsCheck: function(){
+            document.getElementById("omx-id").addEventListener("keyup",function(event){
+                event.preventDefault();
+                if(event.keyCode===13){
+                    document.getElementById("search-btn").click();
+                }
+            });
             if( (this.omxSearch.match(/\d{9}/)) || (this.gpsSearch.match(/\d{9}/)) ){
                 this.set('checkOmxGps',false);
             }else{
                 this.set('checkOmxGps',true);
             }
+           
             
         },
         onSubmit(omxSearch, gpsSearch){
